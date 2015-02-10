@@ -1,0 +1,47 @@
+gene_accession = ["xkn59438", "yhdck2", "eihd39d9", "chdsye847", "hedle3455", "xjhd53e", "45da", "de37dp"]
+
+#Contains the number 5
+1.for acc in gene_accession: 
+    if re.search(r"5", acc):
+        print("\t" + acc)
+
+#Contains the letter d or e
+2.for acc in gene_accession: 
+    if re.search(r"d|e", acc): #pipeline means or
+      print("\t" + acc)
+
+#Contains the letters d and e in that order
+3.for acc in gene_accession: 
+    if re.search(r"d.*e", acc): #(*)means optional or can be repeated(.)means match any single character 
+     print("\t" + acc)
+
+#Contains the letters d and e in that order with a single letter between them
+4.for acc in gene_accession: 
+    if re.search(r"d.e", acc): # .matches any single character
+     print("\t" + acc)
+
+#contain both the letters d and e in any order
+5.for acc in gene_accession: 
+    if re.search(r"d.*e", acc): or re.search(r"e.*d", acc)
+     print("\t" + acc)
+
+#start with x or y
+6.for acc in gene_accession: 
+    if re.search(r"^(x|y)", acc):
+     print("\t" + acc)
+
+#start with x or y and end with e
+7.for acc in gene_accession: 
+    if re.search(r"^(x|y).*e$", acc):
+     print("\t" + acc)
+    
+#contain three or more numbers in a row
+8.for acc in gene_accession: 
+    if re.search(r"\d{3,}", acc): # dont forget the comma
+     print("\t" + acc)
+
+#end with d followed by either a, r or p
+9.for acc in gene_accession: 
+    if re.search(r"d[arp]$", acc):
+     print("\t" + acc)
+
